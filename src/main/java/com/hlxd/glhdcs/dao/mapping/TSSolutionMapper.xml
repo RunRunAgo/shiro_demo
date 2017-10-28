@@ -1,0 +1,384 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hlxd.glhdcs.dao.TSSolutionMapper">
+    <resultMap id="BaseResultMap" type="com.hlxd.glhdcs.pojo.TSSolution">
+        <!--
+        映射
+        -->
+        <id column="SOLUTION_ID" jdbcType="VARCHAR" property="solutionId" />
+        <result column="OBSOLETE_UNIT_CODE" jdbcType="VARCHAR" property="obsoleteUnitCode" />
+        <result column="OBSOLETE_UNIT_NAME" jdbcType="VARCHAR" property="obsoleteUnitName" />
+        <result column="OBSOLETE_UNIT_MODEL" jdbcType="VARCHAR" property="obsoleteUnitModel" />
+        <result column="OBSOLETE_EQUIPMENT_CODE" jdbcType="VARCHAR" property="obsoleteEquipmentCode" />
+        <result column="REPLACE_UNIT_CODE" jdbcType="VARCHAR" property="replaceUnitCode" />
+        <result column="REPLACE_UNIT_NAME" jdbcType="VARCHAR" property="replaceUnitName" />
+        <result column="REPLACE_UNIT_MODEL" jdbcType="VARCHAR" property="replaceUnitModel" />
+        <result column="REPLACE_SUGGEST" jdbcType="VARCHAR" property="replaceSuggest" />
+        <result column="FEEDBACK" jdbcType="VARCHAR" property="feedback" />
+        <result column="STATE" jdbcType="INTEGER" property="state" />
+        <result column="SOLUTION_TIME" jdbcType="TIMESTAMP" property="solutionTime" />
+        <result column="DESIGNER_NAME" jdbcType="VARCHAR" property="designerName" />
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <!--
+        公用sql代码块
+        -->
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <!--
+        插叙条件判断
+        -->
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        <!--
+        字段列表
+        -->
+        SOLUTION_ID, OBSOLETE_UNIT_CODE, OBSOLETE_UNIT_NAME, OBSOLETE_UNIT_MODEL, OBSOLETE_EQUIPMENT_CODE, 
+        REPLACE_UNIT_CODE, REPLACE_UNIT_NAME, REPLACE_UNIT_MODEL, REPLACE_SUGGEST, FEEDBACK, 
+        STATE, SOLUTION_TIME, DESIGNER_NAME
+    </sql>
+    <select id="selectByExample" parameterType="com.hlxd.glhdcs.pojo.TSSolutionExample" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List" />
+        from T_S_SOLUTION
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause" />
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <select id="selectByPrimaryKey" parameterType="java.lang.String" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select 
+        <include refid="Base_Column_List" />
+        from T_S_SOLUTION
+        where SOLUTION_ID = #{solutionId,jdbcType=VARCHAR}
+    </select>
+    <delete id="deleteByPrimaryKey" parameterType="java.lang.String">
+        <!--
+        @mbggenerated
+        -->
+        delete from T_S_SOLUTION
+        where SOLUTION_ID = #{solutionId,jdbcType=VARCHAR}
+    </delete>
+    <delete id="deleteByExample" parameterType="com.hlxd.glhdcs.pojo.TSSolutionExample">
+        <!--
+        @mbggenerated
+        -->
+        delete from T_S_SOLUTION
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause" />
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.hlxd.glhdcs.pojo.TSSolution">
+        <!--
+        @mbggenerated
+        -->
+        insert into T_S_SOLUTION (SOLUTION_ID, OBSOLETE_UNIT_CODE, OBSOLETE_UNIT_NAME, 
+            OBSOLETE_UNIT_MODEL, OBSOLETE_EQUIPMENT_CODE, 
+            REPLACE_UNIT_CODE, REPLACE_UNIT_NAME, REPLACE_UNIT_MODEL, 
+            REPLACE_SUGGEST, FEEDBACK, STATE, 
+            SOLUTION_TIME, DESIGNER_NAME)
+        values (#{solutionId,jdbcType=VARCHAR}, #{obsoleteUnitCode,jdbcType=VARCHAR}, #{obsoleteUnitName,jdbcType=VARCHAR}, 
+            #{obsoleteUnitModel,jdbcType=VARCHAR}, #{obsoleteEquipmentCode,jdbcType=VARCHAR}, 
+            #{replaceUnitCode,jdbcType=VARCHAR}, #{replaceUnitName,jdbcType=VARCHAR}, #{replaceUnitModel,jdbcType=VARCHAR}, 
+            #{replaceSuggest,jdbcType=VARCHAR}, #{feedback,jdbcType=VARCHAR}, #{state,jdbcType=INTEGER}, 
+            #{solutionTime,jdbcType=TIMESTAMP}, #{designerName,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.hlxd.glhdcs.pojo.TSSolution">
+        <!--
+        @mbggenerated
+        -->
+        insert into T_S_SOLUTION
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="solutionId != null">
+                SOLUTION_ID,
+            </if>
+            <if test="obsoleteUnitCode != null">
+                OBSOLETE_UNIT_CODE,
+            </if>
+            <if test="obsoleteUnitName != null">
+                OBSOLETE_UNIT_NAME,
+            </if>
+            <if test="obsoleteUnitModel != null">
+                OBSOLETE_UNIT_MODEL,
+            </if>
+            <if test="obsoleteEquipmentCode != null">
+                OBSOLETE_EQUIPMENT_CODE,
+            </if>
+            <if test="replaceUnitCode != null">
+                REPLACE_UNIT_CODE,
+            </if>
+            <if test="replaceUnitName != null">
+                REPLACE_UNIT_NAME,
+            </if>
+            <if test="replaceUnitModel != null">
+                REPLACE_UNIT_MODEL,
+            </if>
+            <if test="replaceSuggest != null">
+                REPLACE_SUGGEST,
+            </if>
+            <if test="feedback != null">
+                FEEDBACK,
+            </if>
+            <if test="state != null">
+                STATE,
+            </if>
+            <if test="solutionTime != null">
+                SOLUTION_TIME,
+            </if>
+            <if test="designerName != null">
+                DESIGNER_NAME,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="solutionId != null">
+                #{solutionId,jdbcType=VARCHAR},
+            </if>
+            <if test="obsoleteUnitCode != null">
+                #{obsoleteUnitCode,jdbcType=VARCHAR},
+            </if>
+            <if test="obsoleteUnitName != null">
+                #{obsoleteUnitName,jdbcType=VARCHAR},
+            </if>
+            <if test="obsoleteUnitModel != null">
+                #{obsoleteUnitModel,jdbcType=VARCHAR},
+            </if>
+            <if test="obsoleteEquipmentCode != null">
+                #{obsoleteEquipmentCode,jdbcType=VARCHAR},
+            </if>
+            <if test="replaceUnitCode != null">
+                #{replaceUnitCode,jdbcType=VARCHAR},
+            </if>
+            <if test="replaceUnitName != null">
+                #{replaceUnitName,jdbcType=VARCHAR},
+            </if>
+            <if test="replaceUnitModel != null">
+                #{replaceUnitModel,jdbcType=VARCHAR},
+            </if>
+            <if test="replaceSuggest != null">
+                #{replaceSuggest,jdbcType=VARCHAR},
+            </if>
+            <if test="feedback != null">
+                #{feedback,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                #{state,jdbcType=INTEGER},
+            </if>
+            <if test="solutionTime != null">
+                #{solutionTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="designerName != null">
+                #{designerName,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.hlxd.glhdcs.pojo.TSSolutionExample" resultType="java.lang.Integer">
+        <!--
+        @mbggenerated
+        -->
+        select count(*) from T_S_SOLUTION
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause" />
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        <!--
+        @mbggenerated
+        -->
+        update T_S_SOLUTION
+        <set>
+            <if test="record.solutionId != null">
+                SOLUTION_ID = #{record.solutionId,jdbcType=VARCHAR},
+            </if>
+            <if test="record.obsoleteUnitCode != null">
+                OBSOLETE_UNIT_CODE = #{record.obsoleteUnitCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.obsoleteUnitName != null">
+                OBSOLETE_UNIT_NAME = #{record.obsoleteUnitName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.obsoleteUnitModel != null">
+                OBSOLETE_UNIT_MODEL = #{record.obsoleteUnitModel,jdbcType=VARCHAR},
+            </if>
+            <if test="record.obsoleteEquipmentCode != null">
+                OBSOLETE_EQUIPMENT_CODE = #{record.obsoleteEquipmentCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.replaceUnitCode != null">
+                REPLACE_UNIT_CODE = #{record.replaceUnitCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.replaceUnitName != null">
+                REPLACE_UNIT_NAME = #{record.replaceUnitName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.replaceUnitModel != null">
+                REPLACE_UNIT_MODEL = #{record.replaceUnitModel,jdbcType=VARCHAR},
+            </if>
+            <if test="record.replaceSuggest != null">
+                REPLACE_SUGGEST = #{record.replaceSuggest,jdbcType=VARCHAR},
+            </if>
+            <if test="record.feedback != null">
+                FEEDBACK = #{record.feedback,jdbcType=VARCHAR},
+            </if>
+            <if test="record.state != null">
+                STATE = #{record.state,jdbcType=INTEGER},
+            </if>
+            <if test="record.solutionTime != null">
+                SOLUTION_TIME = #{record.solutionTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="record.designerName != null">
+                DESIGNER_NAME = #{record.designerName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        <!--
+        @mbggenerated
+        -->
+        update T_S_SOLUTION
+        set SOLUTION_ID = #{record.solutionId,jdbcType=VARCHAR},
+            OBSOLETE_UNIT_CODE = #{record.obsoleteUnitCode,jdbcType=VARCHAR},
+            OBSOLETE_UNIT_NAME = #{record.obsoleteUnitName,jdbcType=VARCHAR},
+            OBSOLETE_UNIT_MODEL = #{record.obsoleteUnitModel,jdbcType=VARCHAR},
+            OBSOLETE_EQUIPMENT_CODE = #{record.obsoleteEquipmentCode,jdbcType=VARCHAR},
+            REPLACE_UNIT_CODE = #{record.replaceUnitCode,jdbcType=VARCHAR},
+            REPLACE_UNIT_NAME = #{record.replaceUnitName,jdbcType=VARCHAR},
+            REPLACE_UNIT_MODEL = #{record.replaceUnitModel,jdbcType=VARCHAR},
+            REPLACE_SUGGEST = #{record.replaceSuggest,jdbcType=VARCHAR},
+            FEEDBACK = #{record.feedback,jdbcType=VARCHAR},
+            STATE = #{record.state,jdbcType=INTEGER},
+            SOLUTION_TIME = #{record.solutionTime,jdbcType=TIMESTAMP},
+            DESIGNER_NAME = #{record.designerName,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+    <update id="updateByPrimaryKeySelective" parameterType="com.hlxd.glhdcs.pojo.TSSolution">
+        <!--
+        @mbggenerated
+        -->
+        update T_S_SOLUTION
+        <set>
+            <if test="obsoleteUnitCode != null">
+                OBSOLETE_UNIT_CODE = #{obsoleteUnitCode,jdbcType=VARCHAR},
+            </if>
+            <if test="obsoleteUnitName != null">
+                OBSOLETE_UNIT_NAME = #{obsoleteUnitName,jdbcType=VARCHAR},
+            </if>
+            <if test="obsoleteUnitModel != null">
+                OBSOLETE_UNIT_MODEL = #{obsoleteUnitModel,jdbcType=VARCHAR},
+            </if>
+            <if test="obsoleteEquipmentCode != null">
+                OBSOLETE_EQUIPMENT_CODE = #{obsoleteEquipmentCode,jdbcType=VARCHAR},
+            </if>
+            <if test="replaceUnitCode != null">
+                REPLACE_UNIT_CODE = #{replaceUnitCode,jdbcType=VARCHAR},
+            </if>
+            <if test="replaceUnitName != null">
+                REPLACE_UNIT_NAME = #{replaceUnitName,jdbcType=VARCHAR},
+            </if>
+            <if test="replaceUnitModel != null">
+                REPLACE_UNIT_MODEL = #{replaceUnitModel,jdbcType=VARCHAR},
+            </if>
+            <if test="replaceSuggest != null">
+                REPLACE_SUGGEST = #{replaceSuggest,jdbcType=VARCHAR},
+            </if>
+            <if test="feedback != null">
+                FEEDBACK = #{feedback,jdbcType=VARCHAR},
+            </if>
+            <if test="state != null">
+                STATE = #{state,jdbcType=INTEGER},
+            </if>
+            <if test="solutionTime != null">
+                SOLUTION_TIME = #{solutionTime,jdbcType=TIMESTAMP},
+            </if>
+            <if test="designerName != null">
+                DESIGNER_NAME = #{designerName,jdbcType=VARCHAR},
+            </if>
+        </set>
+        where SOLUTION_ID = #{solutionId,jdbcType=VARCHAR}
+    </update>
+    <update id="updateByPrimaryKey" parameterType="com.hlxd.glhdcs.pojo.TSSolution">
+        <!--
+        @mbggenerated
+        -->
+        update T_S_SOLUTION
+        set OBSOLETE_UNIT_CODE = #{obsoleteUnitCode,jdbcType=VARCHAR},
+            OBSOLETE_UNIT_NAME = #{obsoleteUnitName,jdbcType=VARCHAR},
+            OBSOLETE_UNIT_MODEL = #{obsoleteUnitModel,jdbcType=VARCHAR},
+            OBSOLETE_EQUIPMENT_CODE = #{obsoleteEquipmentCode,jdbcType=VARCHAR},
+            REPLACE_UNIT_CODE = #{replaceUnitCode,jdbcType=VARCHAR},
+            REPLACE_UNIT_NAME = #{replaceUnitName,jdbcType=VARCHAR},
+            REPLACE_UNIT_MODEL = #{replaceUnitModel,jdbcType=VARCHAR},
+            REPLACE_SUGGEST = #{replaceSuggest,jdbcType=VARCHAR},
+            FEEDBACK = #{feedback,jdbcType=VARCHAR},
+            STATE = #{state,jdbcType=INTEGER},
+            SOLUTION_TIME = #{solutionTime,jdbcType=TIMESTAMP},
+            DESIGNER_NAME = #{designerName,jdbcType=VARCHAR}
+        where SOLUTION_ID = #{solutionId,jdbcType=VARCHAR}
+    </update>
+</mapper>
