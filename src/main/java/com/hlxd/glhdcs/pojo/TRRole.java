@@ -1,5 +1,6 @@
 package com.hlxd.glhdcs.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Date;
  * TRRole
  * 数据库表：T_R_ROLE 角色表
  */
-public class TRRole {
+public class TRRole implements Serializable {
 
     /**
      * 角色IUID

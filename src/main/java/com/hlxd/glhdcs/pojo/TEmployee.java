@@ -1,11 +1,13 @@
 package com.hlxd.glhdcs.pojo;
 
+import java.io.Serializable;
+
 /**
  * 
  * TEmployee
  * 数据库表：T_EMPLOYEE 员工表
  */
-public class TEmployee {
+public class TEmployee implements Serializable {
 
     /**
      * IUID
