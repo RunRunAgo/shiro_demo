@@ -1,16 +1,15 @@
 package com.hlxd.glhdcs.controller;
 
-import java.sql.Timestamp;
-import java.util.Date;
-
-import javax.annotation.Resource;
-
+import com.hlxd.glhdcs.pojo.TSSolution;
+import com.hlxd.glhdcs.service.SolutionService;
+import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestBody;
 import org.springframework.web.bind.annotation.RequestMapping;
 
-import com.hlxd.glhdcs.pojo.TSSolution;
-import com.hlxd.glhdcs.service.SolutionService;
+import javax.annotation.Resource;
+import java.sql.Timestamp;
+import java.util.Date;
 
 /**
  * 替代方案模块
@@ -18,6 +17,7 @@ import com.hlxd.glhdcs.service.SolutionService;
  *
  */
 @Controller
+@Scope("prototype")
 @RequestMapping("solution")
 public class SolutionController {
 	
@@ -39,6 +39,7 @@ public class SolutionController {
 	/**
 	 * 1.添加方案
 	 */
+	@SuppressWarnings("AlibabaAvoidNewDateGetTime")
 	@RequestMapping("insert")
 	public String insertSolution(/*@RequestBody TSSolution record*/) {
 		TSSolution ts=new  TSSolution();
@@ -50,7 +51,8 @@ public class SolutionController {
 			ts.setReplaceUnitName("替代物资名称002"+i);
 			//SimpleDateFormat df = new SimpleDateFormat("yyyy-MM-dd HH:mm:ss");//设置日期格式  
 		    //System.out.println(df.format(new Date()));// new Date()为获取当前系统时间 
-			Timestamp timestamp = new Timestamp(new Date().getTime()); //2013-01-14 22:45:36.484  
+			//noinspection AlibabaAvoidNewDateGetTime
+			Timestamp timestamp = new Timestamp(new Date().getTime()); //2013-01-14 22:45:36.484
 			System.out.println("时间是"+timestamp);
 			ts.setSolutionTime(timestamp);
 			ts.setDesignerName("runrunago"+i);

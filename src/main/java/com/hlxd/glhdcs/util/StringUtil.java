@@ -11,8 +11,9 @@ public class StringUtil {
 	
 	public static String str2SQL(String str)
 	{
-		if (str==null)
-			return "null";
+		if (str==null) {
+            return "null";
+        }
 		int ii = str.length();
 		StringBuffer sb = new StringBuffer(ii * 2);
 		char ac[] = str.toCharArray();
@@ -47,10 +48,11 @@ public class StringUtil {
 	
 	public static String str2Html(String s)
 	{
-		if(isBlank(s))
-			return "";
-		else
-			s = s.trim();
+		if(isBlank(s)) {
+            return "";
+        } else {
+            s = s.trim();
+        }
 		StringBuffer stringbuffer = new StringBuffer(100);
 		char ac[] = s.toCharArray();
 		for(int i = 0; i < ac.length; i++){

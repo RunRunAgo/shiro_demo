@@ -14,6 +14,7 @@ import org.springframework.beans.factory.annotation.Autowired;
 /**
  * shiro 认证 + 授权   重写
  */
+@SuppressWarnings("ALL")
 public class SampleRealm extends AuthorizingRealm {
 
     @Autowired
@@ -22,10 +23,12 @@ public class SampleRealm extends AuthorizingRealm {
     public SampleRealm() {
         super();
     }
+
     /**
      * 认证信息，主要针对用户登录，
      */
-protected AuthenticationInfo doGetAuthenticationInfo(
+    @Override
+    protected AuthenticationInfo doGetAuthenticationInfo(
             AuthenticationToken authcToken) throws AuthenticationException {
 
         UsernamePasswordToken token = (UsernamePasswordToken) authcToken;

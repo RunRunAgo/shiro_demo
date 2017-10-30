@@ -28,7 +28,8 @@ public class SolutionServiceImpl implements SolutionService {
 	/**
 	 * 删除
 	 */
-	public void deleteSolution(String id) {
+	@Override
+    public void deleteSolution(String id) {
 		solutionMapper.deleteByPrimaryKey(id);
 	}
 	/**
