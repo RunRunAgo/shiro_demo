@@ -8,17 +8,6 @@ import org.apache.shiro.session.Session;
 
 
 /**
- * <p>
- * <p>
- * <p>
- * <p>
- * 区分　责任人　日期　　　　说明<br/>
- * 创建　周柏成　2014年3月3日 　<br/>
- * <p>
- *
- * @author zhou-baicheng
- * @version 1.0, 2014年3月3日
- * <p>
  * Shiro管理下的Token工具类
  */
 public class TokenManager {
@@ -27,6 +16,20 @@ public class TokenManager {
      */
 
     public static final SampleRealm realm = SpringContextUtil.getBean("sampleRealm", SampleRealm.class);
+    /**
+     * 登录
+     *
+     * @param user
+     * @param rememberMe
+     * @return
+     */
+    public static TEmployee login(TEmployee user, Boolean rememberMe) {
+        UsernamePasswordToken token = new UsernamePasswordToken(user.getUserId(), user.getPwd());
+        token.setRememberMe(rememberMe);
+        SecurityUtils.getSubject().login(token);
+        return getToken();
+    }
+
 
     /**
      * 获取当前登录的用户TEmployeeMapper对象
@@ -97,19 +100,6 @@ public class TokenManager {
     }
 
 
-    /**
-     * 登录
-     *
-     * @param user
-     * @param rememberMe
-     * @return
-     */
-    public static TEmployee login(TEmployee user, Boolean rememberMe) {
-        UsernamePasswordToken token = new UsernamePasswordToken(user.getStaffFlag(), user.getPwd());
-        token.setRememberMe(rememberMe);
-        SecurityUtils.getSubject().login(token);
-        return getToken();
-    }
 
 
     /**

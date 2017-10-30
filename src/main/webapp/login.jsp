@@ -1,28 +1,18 @@
-<%--
-  Created by IntelliJ IDEA.
-  User: RunRunAgo
-  Date: 2017/10/28
-  Time: 16:39
-  To change this template use File | Settings | File Templates.
---%>
-<%@ page contentType="text/html;charset=UTF-8" language="java" %>
+<%@ page language="java" contentType="text/html; charset=UTF-8"
+         pageEncoding="UTF-8"%>
+<!DOCTYPE html PUBLIC "-//W3C//DTD HTML 4.01 Transitional//EN" "http://www.w3.org/TR/html4/loose.dtd">
 <html>
 <head>
-    <title>登录</title>
-
-    <style>
-    .from-login{
-        align-content: center;
-    }
-    </style>
+    <meta http-equiv="Content-Type" content="text/html; charset=UTF-8">
+    <title>Insert title here</title>
 </head>
 <body>
-<div class="from-login">
-    <from class="from-login" method="post" action="">
-        用户名:<input type="text" name="T_EMPLOYEE.STAFF_FLAG">
-        密码:<input type="password" name="PWD">
-        <<input type="button" value="submit">
-    </from>
+<div>
+    <form name="form" method="post" action="shiro/userlogin">
+        用户名:<input type="text" name="username" value="admin"> <br>
+        密码:<input type="password" name="password" value="admin"> <input
+            type="submit" name="submit" value="提交">
+    </form>
 </div>
 </body>
 </html>

@@ -2,7 +2,6 @@ package com.hlxd.glhdcs.service;
 
 
 import com.hlxd.glhdcs.pojo.TEmployee;
-import com.hlxd.glhdcs.pojo.TSSolution;
 
 /**
  * 员工service接口
@@ -10,6 +9,12 @@ import com.hlxd.glhdcs.pojo.TSSolution;
  * @author RunRunAgo
  */
 public interface TEmployeeService {
-
-    TEmployee login(String username, char[] password);
+    /**
+     * 获取登录用户信息
+     *
+     * @param username 账号
+     * @param password 密码
+     * @return 用户对象
+     */
+    TEmployee login(String username, String password);
 }

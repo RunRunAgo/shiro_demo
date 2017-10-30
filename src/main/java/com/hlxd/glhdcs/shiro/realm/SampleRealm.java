@@ -31,19 +31,15 @@ public class SampleRealm extends AuthorizingRealm {
     protected AuthenticationInfo doGetAuthenticationInfo(
             AuthenticationToken authcToken) throws AuthenticationException {
 
-        UsernamePasswordToken token = (UsernamePasswordToken) authcToken;
-        TEmployee user = tEmployeeService.login(token.getUsername(), token.getPassword());
-        if (null == user) {
-            throw new AccountException("帐号或密码不正确！");
-            /**
-             * 如果用户的status为禁用。那么就抛出<code>DisabledAccountException</code>
-             */
-        } else {
-            //更新登录时间 last login time
-     /*       user.setLastLoginTime(new Date());
-            tEmployeeService.updateByPrimaryKeySelective(user);*/
+        ShiroToken token = (ShiroToken) authcToken;
+        TEmployee user = tEmployeeService.login(token.getUsername(),token.getPswd());
+        SimpleAuthenticationInfo info = null;
+
+        if (null != user) {
+            info= new SimpleAuthenticationInfo(user, user.getPwd(), getName());
+
         }
-        return new SimpleAuthenticationInfo(user, user.getPwd(), getName());
+        return info;
     }
 
     /**

@@ -6,7 +6,7 @@ import org.apache.shiro.crypto.hash.SimpleHash;
 /**
  * 自定义加密方法
  */
-public class myMd5 {
+public class MyMd5 {
     public static String md5(String pass){
         String saltSource = "blog";
         String hashAlgorithmName = "MD5";

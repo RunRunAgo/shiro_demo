@@ -18,7 +18,7 @@
         <result column="MSDATE" jdbcType="VARCHAR" property="msdate" />
         <result column="LANGUAGE" jdbcType="VARCHAR" property="language" />
         <result column="ECODE" jdbcType="VARCHAR" property="ecode" />
-        <result column="DECODE" jdbcType="VARCHAR" property="decode" />
+        <result column="DECODEE" jdbcType="VARCHAR" property="decode" />
         <result column="NACODE" jdbcType="VARCHAR" property="nacode" />
         <result column="PCODE" jdbcType="VARCHAR" property="pcode" />
         <result column="HCODE" jdbcType="VARCHAR" property="hcode" />
@@ -83,10 +83,8 @@
         <result column="ALC_TIME" jdbcType="VARCHAR" property="alcTime" />
         <result column="FU_CODE" jdbcType="VARCHAR" property="fuCode" />
     </resultMap>
+    <!-- 条件语句 -->
     <sql id="Example_Where_Clause">
-        <!--
-        @mbggenerated
-        -->
         <where>
             <foreach collection="oredCriteria" item="criteria" separator="or">
                 <if test="criteria.valid">
@@ -116,9 +114,6 @@
         </where>
     </sql>
     <sql id="Update_By_Example_Where_Clause">
-        <!--
-        @mbggenerated
-        -->
         <where>
             <foreach collection="example.oredCriteria" item="criteria" separator="or">
                 <if test="criteria.valid">
@@ -147,25 +142,23 @@
             </foreach>
         </where>
     </sql>
+   <!-- 公共sql -->
     <sql id="Base_Column_List">
-        <!--
-        @mbggenerated
-        -->
-        IUID, EMPLOYEE_CODE, EMPLOYEE_SHORT, EMPLOYEE_NAME, COUNTRY_CODE, BDATE, INTO_DATE, 
-        NATIVE_CODE, SCODE, MSCODE, MSDATE, LANGUAGE, ECODE, DECODE, NACODE, PCODE, HCODE, 
-        IDTYPE, IDCARD, EMP_STATUS, LCCODE, ORGANIZATION, DEPT_CODE, STAFF_FLAG, USER_ID, 
-        FNAME, BTYPE, MACODE, SFCODE, ADCODE, ZYCODE, GRCODE, JOBS_CODE, LEAVES_DATE, MOBILE_PHONE, 
-        WORK_PHONE, FAMILY_PHONE, EMAIL, ADDRESS, POSTAL_CODE, OLD_CODE, JZ_FLAG, RD_DATE, 
-        MA_TYPE, ED_TYPE, BANK_CODE, BANK_NAME, ACCOUNT, REMARK, IS_ENABLE, UPDATE_BY, UPDATE_TIME, 
-        PWD, MES_CARDID, GROUP_CODE, QJJOBS_CODE, TEAM_CODE, EM_CODE, POST_CODE, QJOLD_CODE, 
-        QJMOBILE_PHONE, EMPLOYEE_CODE_MDM, EMPLOYEE_ICON, CW_UNIT_CODE, WD_CODE, DL_CODE, 
-        HOUSEHOLD_TYPE, LOCAL_TYPE, INTRODUCER_BY, OUTSOURCINGUNIT, EMPLOYEE_STATUS, SSC_CODE, 
-        BW_TIME, FA_TIME, BLC_TIME, ALC_TIME, FU_CODE
+		*
     </sql>
+    <!--条件查询  -->
     <select id="selectByExample" parameterType="com.hlxd.glhdcs.pojo.TEmployeeExample" resultMap="BaseResultMap">
-        <!--
-        @mbggenerated
-        -->
+        select
+        *
+        from T_EMPLOYEE
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause" />
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <!-- <select id="selectByExample" parameterType="com.hlxd.glhdcs.pojo.TEmployeeExample" resultMap="BaseResultMap">
         select
         <if test="distinct">
             distinct
@@ -178,7 +171,8 @@
         <if test="orderByClause != null">
             order by ${orderByClause}
         </if>
-    </select>
+    </select> -->
+
     <delete id="deleteByExample" parameterType="com.hlxd.glhdcs.pojo.TEmployeeExample">
         <!--
         @mbggenerated
