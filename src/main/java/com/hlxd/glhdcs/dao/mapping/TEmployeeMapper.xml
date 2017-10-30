@@ -1,0 +1,1057 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<!DOCTYPE mapper PUBLIC "-//mybatis.org//DTD Mapper 3.0//EN" "http://mybatis.org/dtd/mybatis-3-mapper.dtd">
+<mapper namespace="com.hlxd.glhdcs.dao.TEmployeeMapper">
+    <resultMap id="BaseResultMap" type="com.hlxd.glhdcs.pojo.TEmployee">
+        <!--
+        @mbggenerated
+        -->
+        <result column="IUID" jdbcType="VARCHAR" property="iuid" />
+        <result column="EMPLOYEE_CODE" jdbcType="VARCHAR" property="employeeCode" />
+        <result column="EMPLOYEE_SHORT" jdbcType="VARCHAR" property="employeeShort" />
+        <result column="EMPLOYEE_NAME" jdbcType="VARCHAR" property="employeeName" />
+        <result column="COUNTRY_CODE" jdbcType="VARCHAR" property="countryCode" />
+        <result column="BDATE" jdbcType="VARCHAR" property="bdate" />
+        <result column="INTO_DATE" jdbcType="VARCHAR" property="intoDate" />
+        <result column="NATIVE_CODE" jdbcType="VARCHAR" property="nativeCode" />
+        <result column="SCODE" jdbcType="VARCHAR" property="scode" />
+        <result column="MSCODE" jdbcType="VARCHAR" property="mscode" />
+        <result column="MSDATE" jdbcType="VARCHAR" property="msdate" />
+        <result column="LANGUAGE" jdbcType="VARCHAR" property="language" />
+        <result column="ECODE" jdbcType="VARCHAR" property="ecode" />
+        <result column="DECODE" jdbcType="VARCHAR" property="decode" />
+        <result column="NACODE" jdbcType="VARCHAR" property="nacode" />
+        <result column="PCODE" jdbcType="VARCHAR" property="pcode" />
+        <result column="HCODE" jdbcType="VARCHAR" property="hcode" />
+        <result column="IDTYPE" jdbcType="VARCHAR" property="idtype" />
+        <result column="IDCARD" jdbcType="VARCHAR" property="idcard" />
+        <result column="EMP_STATUS" jdbcType="VARCHAR" property="empStatus" />
+        <result column="LCCODE" jdbcType="VARCHAR" property="lccode" />
+        <result column="ORGANIZATION" jdbcType="VARCHAR" property="organization" />
+        <result column="DEPT_CODE" jdbcType="VARCHAR" property="deptCode" />
+        <result column="STAFF_FLAG" jdbcType="VARCHAR" property="staffFlag" />
+        <result column="USER_ID" jdbcType="VARCHAR" property="userId" />
+        <result column="FNAME" jdbcType="VARCHAR" property="fname" />
+        <result column="BTYPE" jdbcType="VARCHAR" property="btype" />
+        <result column="MACODE" jdbcType="VARCHAR" property="macode" />
+        <result column="SFCODE" jdbcType="VARCHAR" property="sfcode" />
+        <result column="ADCODE" jdbcType="VARCHAR" property="adcode" />
+        <result column="ZYCODE" jdbcType="VARCHAR" property="zycode" />
+        <result column="GRCODE" jdbcType="VARCHAR" property="grcode" />
+        <result column="JOBS_CODE" jdbcType="VARCHAR" property="jobsCode" />
+        <result column="LEAVES_DATE" jdbcType="VARCHAR" property="leavesDate" />
+        <result column="MOBILE_PHONE" jdbcType="VARCHAR" property="mobilePhone" />
+        <result column="WORK_PHONE" jdbcType="VARCHAR" property="workPhone" />
+        <result column="FAMILY_PHONE" jdbcType="VARCHAR" property="familyPhone" />
+        <result column="EMAIL" jdbcType="VARCHAR" property="email" />
+        <result column="ADDRESS" jdbcType="VARCHAR" property="address" />
+        <result column="POSTAL_CODE" jdbcType="VARCHAR" property="postalCode" />
+        <result column="OLD_CODE" jdbcType="VARCHAR" property="oldCode" />
+        <result column="JZ_FLAG" jdbcType="VARCHAR" property="jzFlag" />
+        <result column="RD_DATE" jdbcType="VARCHAR" property="rdDate" />
+        <result column="MA_TYPE" jdbcType="VARCHAR" property="maType" />
+        <result column="ED_TYPE" jdbcType="VARCHAR" property="edType" />
+        <result column="BANK_CODE" jdbcType="VARCHAR" property="bankCode" />
+        <result column="BANK_NAME" jdbcType="VARCHAR" property="bankName" />
+        <result column="ACCOUNT" jdbcType="VARCHAR" property="account" />
+        <result column="REMARK" jdbcType="VARCHAR" property="remark" />
+        <result column="IS_ENABLE" jdbcType="TINYINT" property="isEnable" />
+        <result column="UPDATE_BY" jdbcType="VARCHAR" property="updateBy" />
+        <result column="UPDATE_TIME" jdbcType="VARCHAR" property="updateTime" />
+        <result column="PWD" jdbcType="VARCHAR" property="pwd" />
+        <result column="MES_CARDID" jdbcType="VARCHAR" property="mesCardid" />
+        <result column="GROUP_CODE" jdbcType="VARCHAR" property="groupCode" />
+        <result column="QJJOBS_CODE" jdbcType="VARCHAR" property="qjjobsCode" />
+        <result column="TEAM_CODE" jdbcType="VARCHAR" property="teamCode" />
+        <result column="EM_CODE" jdbcType="VARCHAR" property="emCode" />
+        <result column="POST_CODE" jdbcType="VARCHAR" property="postCode" />
+        <result column="QJOLD_CODE" jdbcType="VARCHAR" property="qjoldCode" />
+        <result column="QJMOBILE_PHONE" jdbcType="VARCHAR" property="qjmobilePhone" />
+        <result column="EMPLOYEE_CODE_MDM" jdbcType="VARCHAR" property="employeeCodeMdm" />
+        <result column="EMPLOYEE_ICON" jdbcType="VARCHAR" property="employeeIcon" />
+        <result column="CW_UNIT_CODE" jdbcType="VARCHAR" property="cwUnitCode" />
+        <result column="WD_CODE" jdbcType="VARCHAR" property="wdCode" />
+        <result column="DL_CODE" jdbcType="VARCHAR" property="dlCode" />
+        <result column="HOUSEHOLD_TYPE" jdbcType="VARCHAR" property="householdType" />
+        <result column="LOCAL_TYPE" jdbcType="VARCHAR" property="localType" />
+        <result column="INTRODUCER_BY" jdbcType="VARCHAR" property="introducerBy" />
+        <result column="OUTSOURCINGUNIT" jdbcType="VARCHAR" property="outsourcingunit" />
+        <result column="EMPLOYEE_STATUS" jdbcType="VARCHAR" property="employeeStatus" />
+        <result column="SSC_CODE" jdbcType="VARCHAR" property="sscCode" />
+        <result column="BW_TIME" jdbcType="VARCHAR" property="bwTime" />
+        <result column="FA_TIME" jdbcType="VARCHAR" property="faTime" />
+        <result column="BLC_TIME" jdbcType="VARCHAR" property="blcTime" />
+        <result column="ALC_TIME" jdbcType="VARCHAR" property="alcTime" />
+        <result column="FU_CODE" jdbcType="VARCHAR" property="fuCode" />
+    </resultMap>
+    <sql id="Example_Where_Clause">
+        <!--
+        @mbggenerated
+        -->
+        <where>
+            <foreach collection="oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Update_By_Example_Where_Clause">
+        <!--
+        @mbggenerated
+        -->
+        <where>
+            <foreach collection="example.oredCriteria" item="criteria" separator="or">
+                <if test="criteria.valid">
+                    <trim prefix="(" prefixOverrides="and" suffix=")">
+                        <foreach collection="criteria.criteria" item="criterion">
+                            <choose>
+                                <when test="criterion.noValue">
+                                    and ${criterion.condition}
+                                </when>
+                                <when test="criterion.singleValue">
+                                    and ${criterion.condition} #{criterion.value}
+                                </when>
+                                <when test="criterion.betweenValue">
+                                    and ${criterion.condition} #{criterion.value} and #{criterion.secondValue}
+                                </when>
+                                <when test="criterion.listValue">
+                                    and ${criterion.condition}
+                                    <foreach close=")" collection="criterion.value" item="listItem" open="(" separator=",">
+                                        #{listItem}
+                                    </foreach>
+                                </when>
+                            </choose>
+                        </foreach>
+                    </trim>
+                </if>
+            </foreach>
+        </where>
+    </sql>
+    <sql id="Base_Column_List">
+        <!--
+        @mbggenerated
+        -->
+        IUID, EMPLOYEE_CODE, EMPLOYEE_SHORT, EMPLOYEE_NAME, COUNTRY_CODE, BDATE, INTO_DATE, 
+        NATIVE_CODE, SCODE, MSCODE, MSDATE, LANGUAGE, ECODE, DECODE, NACODE, PCODE, HCODE, 
+        IDTYPE, IDCARD, EMP_STATUS, LCCODE, ORGANIZATION, DEPT_CODE, STAFF_FLAG, USER_ID, 
+        FNAME, BTYPE, MACODE, SFCODE, ADCODE, ZYCODE, GRCODE, JOBS_CODE, LEAVES_DATE, MOBILE_PHONE, 
+        WORK_PHONE, FAMILY_PHONE, EMAIL, ADDRESS, POSTAL_CODE, OLD_CODE, JZ_FLAG, RD_DATE, 
+        MA_TYPE, ED_TYPE, BANK_CODE, BANK_NAME, ACCOUNT, REMARK, IS_ENABLE, UPDATE_BY, UPDATE_TIME, 
+        PWD, MES_CARDID, GROUP_CODE, QJJOBS_CODE, TEAM_CODE, EM_CODE, POST_CODE, QJOLD_CODE, 
+        QJMOBILE_PHONE, EMPLOYEE_CODE_MDM, EMPLOYEE_ICON, CW_UNIT_CODE, WD_CODE, DL_CODE, 
+        HOUSEHOLD_TYPE, LOCAL_TYPE, INTRODUCER_BY, OUTSOURCINGUNIT, EMPLOYEE_STATUS, SSC_CODE, 
+        BW_TIME, FA_TIME, BLC_TIME, ALC_TIME, FU_CODE
+    </sql>
+    <select id="selectByExample" parameterType="com.hlxd.glhdcs.pojo.TEmployeeExample" resultMap="BaseResultMap">
+        <!--
+        @mbggenerated
+        -->
+        select
+        <if test="distinct">
+            distinct
+        </if>
+        <include refid="Base_Column_List" />
+        from T_EMPLOYEE
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause" />
+        </if>
+        <if test="orderByClause != null">
+            order by ${orderByClause}
+        </if>
+    </select>
+    <delete id="deleteByExample" parameterType="com.hlxd.glhdcs.pojo.TEmployeeExample">
+        <!--
+        @mbggenerated
+        -->
+        delete from T_EMPLOYEE
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause" />
+        </if>
+    </delete>
+    <insert id="insert" parameterType="com.hlxd.glhdcs.pojo.TEmployee">
+        <!--
+        @mbggenerated
+        -->
+        insert into T_EMPLOYEE (IUID, EMPLOYEE_CODE, EMPLOYEE_SHORT, 
+            EMPLOYEE_NAME, COUNTRY_CODE, BDATE, 
+            INTO_DATE, NATIVE_CODE, SCODE, 
+            MSCODE, MSDATE, LANGUAGE, 
+            ECODE, DECODE, NACODE, 
+            PCODE, HCODE, IDTYPE, 
+            IDCARD, EMP_STATUS, LCCODE, 
+            ORGANIZATION, DEPT_CODE, STAFF_FLAG, 
+            USER_ID, FNAME, BTYPE, 
+            MACODE, SFCODE, ADCODE, 
+            ZYCODE, GRCODE, JOBS_CODE, 
+            LEAVES_DATE, MOBILE_PHONE, WORK_PHONE, 
+            FAMILY_PHONE, EMAIL, ADDRESS, 
+            POSTAL_CODE, OLD_CODE, JZ_FLAG, 
+            RD_DATE, MA_TYPE, ED_TYPE, 
+            BANK_CODE, BANK_NAME, ACCOUNT, 
+            REMARK, IS_ENABLE, UPDATE_BY, 
+            UPDATE_TIME, PWD, MES_CARDID, 
+            GROUP_CODE, QJJOBS_CODE, TEAM_CODE, 
+            EM_CODE, POST_CODE, QJOLD_CODE, 
+            QJMOBILE_PHONE, EMPLOYEE_CODE_MDM, EMPLOYEE_ICON, 
+            CW_UNIT_CODE, WD_CODE, DL_CODE, 
+            HOUSEHOLD_TYPE, LOCAL_TYPE, INTRODUCER_BY, 
+            OUTSOURCINGUNIT, EMPLOYEE_STATUS, SSC_CODE, 
+            BW_TIME, FA_TIME, BLC_TIME, 
+            ALC_TIME, FU_CODE)
+        values (#{iuid,jdbcType=VARCHAR}, #{employeeCode,jdbcType=VARCHAR}, #{employeeShort,jdbcType=VARCHAR}, 
+            #{employeeName,jdbcType=VARCHAR}, #{countryCode,jdbcType=VARCHAR}, #{bdate,jdbcType=VARCHAR}, 
+            #{intoDate,jdbcType=VARCHAR}, #{nativeCode,jdbcType=VARCHAR}, #{scode,jdbcType=VARCHAR}, 
+            #{mscode,jdbcType=VARCHAR}, #{msdate,jdbcType=VARCHAR}, #{language,jdbcType=VARCHAR}, 
+            #{ecode,jdbcType=VARCHAR}, #{decode,jdbcType=VARCHAR}, #{nacode,jdbcType=VARCHAR}, 
+            #{pcode,jdbcType=VARCHAR}, #{hcode,jdbcType=VARCHAR}, #{idtype,jdbcType=VARCHAR}, 
+            #{idcard,jdbcType=VARCHAR}, #{empStatus,jdbcType=VARCHAR}, #{lccode,jdbcType=VARCHAR}, 
+            #{organization,jdbcType=VARCHAR}, #{deptCode,jdbcType=VARCHAR}, #{staffFlag,jdbcType=VARCHAR}, 
+            #{userId,jdbcType=VARCHAR}, #{fname,jdbcType=VARCHAR}, #{btype,jdbcType=VARCHAR}, 
+            #{macode,jdbcType=VARCHAR}, #{sfcode,jdbcType=VARCHAR}, #{adcode,jdbcType=VARCHAR}, 
+            #{zycode,jdbcType=VARCHAR}, #{grcode,jdbcType=VARCHAR}, #{jobsCode,jdbcType=VARCHAR}, 
+            #{leavesDate,jdbcType=VARCHAR}, #{mobilePhone,jdbcType=VARCHAR}, #{workPhone,jdbcType=VARCHAR}, 
+            #{familyPhone,jdbcType=VARCHAR}, #{email,jdbcType=VARCHAR}, #{address,jdbcType=VARCHAR}, 
+            #{postalCode,jdbcType=VARCHAR}, #{oldCode,jdbcType=VARCHAR}, #{jzFlag,jdbcType=VARCHAR}, 
+            #{rdDate,jdbcType=VARCHAR}, #{maType,jdbcType=VARCHAR}, #{edType,jdbcType=VARCHAR}, 
+            #{bankCode,jdbcType=VARCHAR}, #{bankName,jdbcType=VARCHAR}, #{account,jdbcType=VARCHAR}, 
+            #{remark,jdbcType=VARCHAR}, #{isEnable,jdbcType=TINYINT}, #{updateBy,jdbcType=VARCHAR}, 
+            #{updateTime,jdbcType=VARCHAR}, #{pwd,jdbcType=VARCHAR}, #{mesCardid,jdbcType=VARCHAR}, 
+            #{groupCode,jdbcType=VARCHAR}, #{qjjobsCode,jdbcType=VARCHAR}, #{teamCode,jdbcType=VARCHAR}, 
+            #{emCode,jdbcType=VARCHAR}, #{postCode,jdbcType=VARCHAR}, #{qjoldCode,jdbcType=VARCHAR}, 
+            #{qjmobilePhone,jdbcType=VARCHAR}, #{employeeCodeMdm,jdbcType=VARCHAR}, #{employeeIcon,jdbcType=VARCHAR}, 
+            #{cwUnitCode,jdbcType=VARCHAR}, #{wdCode,jdbcType=VARCHAR}, #{dlCode,jdbcType=VARCHAR}, 
+            #{householdType,jdbcType=VARCHAR}, #{localType,jdbcType=VARCHAR}, #{introducerBy,jdbcType=VARCHAR}, 
+            #{outsourcingunit,jdbcType=VARCHAR}, #{employeeStatus,jdbcType=VARCHAR}, #{sscCode,jdbcType=VARCHAR}, 
+            #{bwTime,jdbcType=VARCHAR}, #{faTime,jdbcType=VARCHAR}, #{blcTime,jdbcType=VARCHAR}, 
+            #{alcTime,jdbcType=VARCHAR}, #{fuCode,jdbcType=VARCHAR})
+    </insert>
+    <insert id="insertSelective" parameterType="com.hlxd.glhdcs.pojo.TEmployee">
+        <!--
+        @mbggenerated
+        -->
+        insert into T_EMPLOYEE
+        <trim prefix="(" suffix=")" suffixOverrides=",">
+            <if test="iuid != null">
+                IUID,
+            </if>
+            <if test="employeeCode != null">
+                EMPLOYEE_CODE,
+            </if>
+            <if test="employeeShort != null">
+                EMPLOYEE_SHORT,
+            </if>
+            <if test="employeeName != null">
+                EMPLOYEE_NAME,
+            </if>
+            <if test="countryCode != null">
+                COUNTRY_CODE,
+            </if>
+            <if test="bdate != null">
+                BDATE,
+            </if>
+            <if test="intoDate != null">
+                INTO_DATE,
+            </if>
+            <if test="nativeCode != null">
+                NATIVE_CODE,
+            </if>
+            <if test="scode != null">
+                SCODE,
+            </if>
+            <if test="mscode != null">
+                MSCODE,
+            </if>
+            <if test="msdate != null">
+                MSDATE,
+            </if>
+            <if test="language != null">
+                LANGUAGE,
+            </if>
+            <if test="ecode != null">
+                ECODE,
+            </if>
+            <if test="decode != null">
+                DECODE,
+            </if>
+            <if test="nacode != null">
+                NACODE,
+            </if>
+            <if test="pcode != null">
+                PCODE,
+            </if>
+            <if test="hcode != null">
+                HCODE,
+            </if>
+            <if test="idtype != null">
+                IDTYPE,
+            </if>
+            <if test="idcard != null">
+                IDCARD,
+            </if>
+            <if test="empStatus != null">
+                EMP_STATUS,
+            </if>
+            <if test="lccode != null">
+                LCCODE,
+            </if>
+            <if test="organization != null">
+                ORGANIZATION,
+            </if>
+            <if test="deptCode != null">
+                DEPT_CODE,
+            </if>
+            <if test="staffFlag != null">
+                STAFF_FLAG,
+            </if>
+            <if test="userId != null">
+                USER_ID,
+            </if>
+            <if test="fname != null">
+                FNAME,
+            </if>
+            <if test="btype != null">
+                BTYPE,
+            </if>
+            <if test="macode != null">
+                MACODE,
+            </if>
+            <if test="sfcode != null">
+                SFCODE,
+            </if>
+            <if test="adcode != null">
+                ADCODE,
+            </if>
+            <if test="zycode != null">
+                ZYCODE,
+            </if>
+            <if test="grcode != null">
+                GRCODE,
+            </if>
+            <if test="jobsCode != null">
+                JOBS_CODE,
+            </if>
+            <if test="leavesDate != null">
+                LEAVES_DATE,
+            </if>
+            <if test="mobilePhone != null">
+                MOBILE_PHONE,
+            </if>
+            <if test="workPhone != null">
+                WORK_PHONE,
+            </if>
+            <if test="familyPhone != null">
+                FAMILY_PHONE,
+            </if>
+            <if test="email != null">
+                EMAIL,
+            </if>
+            <if test="address != null">
+                ADDRESS,
+            </if>
+            <if test="postalCode != null">
+                POSTAL_CODE,
+            </if>
+            <if test="oldCode != null">
+                OLD_CODE,
+            </if>
+            <if test="jzFlag != null">
+                JZ_FLAG,
+            </if>
+            <if test="rdDate != null">
+                RD_DATE,
+            </if>
+            <if test="maType != null">
+                MA_TYPE,
+            </if>
+            <if test="edType != null">
+                ED_TYPE,
+            </if>
+            <if test="bankCode != null">
+                BANK_CODE,
+            </if>
+            <if test="bankName != null">
+                BANK_NAME,
+            </if>
+            <if test="account != null">
+                ACCOUNT,
+            </if>
+            <if test="remark != null">
+                REMARK,
+            </if>
+            <if test="isEnable != null">
+                IS_ENABLE,
+            </if>
+            <if test="updateBy != null">
+                UPDATE_BY,
+            </if>
+            <if test="updateTime != null">
+                UPDATE_TIME,
+            </if>
+            <if test="pwd != null">
+                PWD,
+            </if>
+            <if test="mesCardid != null">
+                MES_CARDID,
+            </if>
+            <if test="groupCode != null">
+                GROUP_CODE,
+            </if>
+            <if test="qjjobsCode != null">
+                QJJOBS_CODE,
+            </if>
+            <if test="teamCode != null">
+                TEAM_CODE,
+            </if>
+            <if test="emCode != null">
+                EM_CODE,
+            </if>
+            <if test="postCode != null">
+                POST_CODE,
+            </if>
+            <if test="qjoldCode != null">
+                QJOLD_CODE,
+            </if>
+            <if test="qjmobilePhone != null">
+                QJMOBILE_PHONE,
+            </if>
+            <if test="employeeCodeMdm != null">
+                EMPLOYEE_CODE_MDM,
+            </if>
+            <if test="employeeIcon != null">
+                EMPLOYEE_ICON,
+            </if>
+            <if test="cwUnitCode != null">
+                CW_UNIT_CODE,
+            </if>
+            <if test="wdCode != null">
+                WD_CODE,
+            </if>
+            <if test="dlCode != null">
+                DL_CODE,
+            </if>
+            <if test="householdType != null">
+                HOUSEHOLD_TYPE,
+            </if>
+            <if test="localType != null">
+                LOCAL_TYPE,
+            </if>
+            <if test="introducerBy != null">
+                INTRODUCER_BY,
+            </if>
+            <if test="outsourcingunit != null">
+                OUTSOURCINGUNIT,
+            </if>
+            <if test="employeeStatus != null">
+                EMPLOYEE_STATUS,
+            </if>
+            <if test="sscCode != null">
+                SSC_CODE,
+            </if>
+            <if test="bwTime != null">
+                BW_TIME,
+            </if>
+            <if test="faTime != null">
+                FA_TIME,
+            </if>
+            <if test="blcTime != null">
+                BLC_TIME,
+            </if>
+            <if test="alcTime != null">
+                ALC_TIME,
+            </if>
+            <if test="fuCode != null">
+                FU_CODE,
+            </if>
+        </trim>
+        <trim prefix="values (" suffix=")" suffixOverrides=",">
+            <if test="iuid != null">
+                #{iuid,jdbcType=VARCHAR},
+            </if>
+            <if test="employeeCode != null">
+                #{employeeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="employeeShort != null">
+                #{employeeShort,jdbcType=VARCHAR},
+            </if>
+            <if test="employeeName != null">
+                #{employeeName,jdbcType=VARCHAR},
+            </if>
+            <if test="countryCode != null">
+                #{countryCode,jdbcType=VARCHAR},
+            </if>
+            <if test="bdate != null">
+                #{bdate,jdbcType=VARCHAR},
+            </if>
+            <if test="intoDate != null">
+                #{intoDate,jdbcType=VARCHAR},
+            </if>
+            <if test="nativeCode != null">
+                #{nativeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="scode != null">
+                #{scode,jdbcType=VARCHAR},
+            </if>
+            <if test="mscode != null">
+                #{mscode,jdbcType=VARCHAR},
+            </if>
+            <if test="msdate != null">
+                #{msdate,jdbcType=VARCHAR},
+            </if>
+            <if test="language != null">
+                #{language,jdbcType=VARCHAR},
+            </if>
+            <if test="ecode != null">
+                #{ecode,jdbcType=VARCHAR},
+            </if>
+            <if test="decode != null">
+                #{decode,jdbcType=VARCHAR},
+            </if>
+            <if test="nacode != null">
+                #{nacode,jdbcType=VARCHAR},
+            </if>
+            <if test="pcode != null">
+                #{pcode,jdbcType=VARCHAR},
+            </if>
+            <if test="hcode != null">
+                #{hcode,jdbcType=VARCHAR},
+            </if>
+            <if test="idtype != null">
+                #{idtype,jdbcType=VARCHAR},
+            </if>
+            <if test="idcard != null">
+                #{idcard,jdbcType=VARCHAR},
+            </if>
+            <if test="empStatus != null">
+                #{empStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="lccode != null">
+                #{lccode,jdbcType=VARCHAR},
+            </if>
+            <if test="organization != null">
+                #{organization,jdbcType=VARCHAR},
+            </if>
+            <if test="deptCode != null">
+                #{deptCode,jdbcType=VARCHAR},
+            </if>
+            <if test="staffFlag != null">
+                #{staffFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="userId != null">
+                #{userId,jdbcType=VARCHAR},
+            </if>
+            <if test="fname != null">
+                #{fname,jdbcType=VARCHAR},
+            </if>
+            <if test="btype != null">
+                #{btype,jdbcType=VARCHAR},
+            </if>
+            <if test="macode != null">
+                #{macode,jdbcType=VARCHAR},
+            </if>
+            <if test="sfcode != null">
+                #{sfcode,jdbcType=VARCHAR},
+            </if>
+            <if test="adcode != null">
+                #{adcode,jdbcType=VARCHAR},
+            </if>
+            <if test="zycode != null">
+                #{zycode,jdbcType=VARCHAR},
+            </if>
+            <if test="grcode != null">
+                #{grcode,jdbcType=VARCHAR},
+            </if>
+            <if test="jobsCode != null">
+                #{jobsCode,jdbcType=VARCHAR},
+            </if>
+            <if test="leavesDate != null">
+                #{leavesDate,jdbcType=VARCHAR},
+            </if>
+            <if test="mobilePhone != null">
+                #{mobilePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="workPhone != null">
+                #{workPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="familyPhone != null">
+                #{familyPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="email != null">
+                #{email,jdbcType=VARCHAR},
+            </if>
+            <if test="address != null">
+                #{address,jdbcType=VARCHAR},
+            </if>
+            <if test="postalCode != null">
+                #{postalCode,jdbcType=VARCHAR},
+            </if>
+            <if test="oldCode != null">
+                #{oldCode,jdbcType=VARCHAR},
+            </if>
+            <if test="jzFlag != null">
+                #{jzFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="rdDate != null">
+                #{rdDate,jdbcType=VARCHAR},
+            </if>
+            <if test="maType != null">
+                #{maType,jdbcType=VARCHAR},
+            </if>
+            <if test="edType != null">
+                #{edType,jdbcType=VARCHAR},
+            </if>
+            <if test="bankCode != null">
+                #{bankCode,jdbcType=VARCHAR},
+            </if>
+            <if test="bankName != null">
+                #{bankName,jdbcType=VARCHAR},
+            </if>
+            <if test="account != null">
+                #{account,jdbcType=VARCHAR},
+            </if>
+            <if test="remark != null">
+                #{remark,jdbcType=VARCHAR},
+            </if>
+            <if test="isEnable != null">
+                #{isEnable,jdbcType=TINYINT},
+            </if>
+            <if test="updateBy != null">
+                #{updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="updateTime != null">
+                #{updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="pwd != null">
+                #{pwd,jdbcType=VARCHAR},
+            </if>
+            <if test="mesCardid != null">
+                #{mesCardid,jdbcType=VARCHAR},
+            </if>
+            <if test="groupCode != null">
+                #{groupCode,jdbcType=VARCHAR},
+            </if>
+            <if test="qjjobsCode != null">
+                #{qjjobsCode,jdbcType=VARCHAR},
+            </if>
+            <if test="teamCode != null">
+                #{teamCode,jdbcType=VARCHAR},
+            </if>
+            <if test="emCode != null">
+                #{emCode,jdbcType=VARCHAR},
+            </if>
+            <if test="postCode != null">
+                #{postCode,jdbcType=VARCHAR},
+            </if>
+            <if test="qjoldCode != null">
+                #{qjoldCode,jdbcType=VARCHAR},
+            </if>
+            <if test="qjmobilePhone != null">
+                #{qjmobilePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="employeeCodeMdm != null">
+                #{employeeCodeMdm,jdbcType=VARCHAR},
+            </if>
+            <if test="employeeIcon != null">
+                #{employeeIcon,jdbcType=VARCHAR},
+            </if>
+            <if test="cwUnitCode != null">
+                #{cwUnitCode,jdbcType=VARCHAR},
+            </if>
+            <if test="wdCode != null">
+                #{wdCode,jdbcType=VARCHAR},
+            </if>
+            <if test="dlCode != null">
+                #{dlCode,jdbcType=VARCHAR},
+            </if>
+            <if test="householdType != null">
+                #{householdType,jdbcType=VARCHAR},
+            </if>
+            <if test="localType != null">
+                #{localType,jdbcType=VARCHAR},
+            </if>
+            <if test="introducerBy != null">
+                #{introducerBy,jdbcType=VARCHAR},
+            </if>
+            <if test="outsourcingunit != null">
+                #{outsourcingunit,jdbcType=VARCHAR},
+            </if>
+            <if test="employeeStatus != null">
+                #{employeeStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="sscCode != null">
+                #{sscCode,jdbcType=VARCHAR},
+            </if>
+            <if test="bwTime != null">
+                #{bwTime,jdbcType=VARCHAR},
+            </if>
+            <if test="faTime != null">
+                #{faTime,jdbcType=VARCHAR},
+            </if>
+            <if test="blcTime != null">
+                #{blcTime,jdbcType=VARCHAR},
+            </if>
+            <if test="alcTime != null">
+                #{alcTime,jdbcType=VARCHAR},
+            </if>
+            <if test="fuCode != null">
+                #{fuCode,jdbcType=VARCHAR},
+            </if>
+        </trim>
+    </insert>
+    <select id="countByExample" parameterType="com.hlxd.glhdcs.pojo.TEmployeeExample" resultType="java.lang.Integer">
+        <!--
+        @mbggenerated
+        -->
+        select count(*) from T_EMPLOYEE
+        <if test="_parameter != null">
+            <include refid="Example_Where_Clause" />
+        </if>
+    </select>
+    <update id="updateByExampleSelective" parameterType="map">
+        <!--
+        @mbggenerated
+        -->
+        update T_EMPLOYEE
+        <set>
+            <if test="record.iuid != null">
+                IUID = #{record.iuid,jdbcType=VARCHAR},
+            </if>
+            <if test="record.employeeCode != null">
+                EMPLOYEE_CODE = #{record.employeeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.employeeShort != null">
+                EMPLOYEE_SHORT = #{record.employeeShort,jdbcType=VARCHAR},
+            </if>
+            <if test="record.employeeName != null">
+                EMPLOYEE_NAME = #{record.employeeName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.countryCode != null">
+                COUNTRY_CODE = #{record.countryCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.bdate != null">
+                BDATE = #{record.bdate,jdbcType=VARCHAR},
+            </if>
+            <if test="record.intoDate != null">
+                INTO_DATE = #{record.intoDate,jdbcType=VARCHAR},
+            </if>
+            <if test="record.nativeCode != null">
+                NATIVE_CODE = #{record.nativeCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.scode != null">
+                SCODE = #{record.scode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.mscode != null">
+                MSCODE = #{record.mscode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.msdate != null">
+                MSDATE = #{record.msdate,jdbcType=VARCHAR},
+            </if>
+            <if test="record.language != null">
+                LANGUAGE = #{record.language,jdbcType=VARCHAR},
+            </if>
+            <if test="record.ecode != null">
+                ECODE = #{record.ecode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.decode != null">
+                DECODE = #{record.decode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.nacode != null">
+                NACODE = #{record.nacode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.pcode != null">
+                PCODE = #{record.pcode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.hcode != null">
+                HCODE = #{record.hcode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.idtype != null">
+                IDTYPE = #{record.idtype,jdbcType=VARCHAR},
+            </if>
+            <if test="record.idcard != null">
+                IDCARD = #{record.idcard,jdbcType=VARCHAR},
+            </if>
+            <if test="record.empStatus != null">
+                EMP_STATUS = #{record.empStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="record.lccode != null">
+                LCCODE = #{record.lccode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.organization != null">
+                ORGANIZATION = #{record.organization,jdbcType=VARCHAR},
+            </if>
+            <if test="record.deptCode != null">
+                DEPT_CODE = #{record.deptCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.staffFlag != null">
+                STAFF_FLAG = #{record.staffFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="record.userId != null">
+                USER_ID = #{record.userId,jdbcType=VARCHAR},
+            </if>
+            <if test="record.fname != null">
+                FNAME = #{record.fname,jdbcType=VARCHAR},
+            </if>
+            <if test="record.btype != null">
+                BTYPE = #{record.btype,jdbcType=VARCHAR},
+            </if>
+            <if test="record.macode != null">
+                MACODE = #{record.macode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.sfcode != null">
+                SFCODE = #{record.sfcode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.adcode != null">
+                ADCODE = #{record.adcode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.zycode != null">
+                ZYCODE = #{record.zycode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.grcode != null">
+                GRCODE = #{record.grcode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.jobsCode != null">
+                JOBS_CODE = #{record.jobsCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.leavesDate != null">
+                LEAVES_DATE = #{record.leavesDate,jdbcType=VARCHAR},
+            </if>
+            <if test="record.mobilePhone != null">
+                MOBILE_PHONE = #{record.mobilePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="record.workPhone != null">
+                WORK_PHONE = #{record.workPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="record.familyPhone != null">
+                FAMILY_PHONE = #{record.familyPhone,jdbcType=VARCHAR},
+            </if>
+            <if test="record.email != null">
+                EMAIL = #{record.email,jdbcType=VARCHAR},
+            </if>
+            <if test="record.address != null">
+                ADDRESS = #{record.address,jdbcType=VARCHAR},
+            </if>
+            <if test="record.postalCode != null">
+                POSTAL_CODE = #{record.postalCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.oldCode != null">
+                OLD_CODE = #{record.oldCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.jzFlag != null">
+                JZ_FLAG = #{record.jzFlag,jdbcType=VARCHAR},
+            </if>
+            <if test="record.rdDate != null">
+                RD_DATE = #{record.rdDate,jdbcType=VARCHAR},
+            </if>
+            <if test="record.maType != null">
+                MA_TYPE = #{record.maType,jdbcType=VARCHAR},
+            </if>
+            <if test="record.edType != null">
+                ED_TYPE = #{record.edType,jdbcType=VARCHAR},
+            </if>
+            <if test="record.bankCode != null">
+                BANK_CODE = #{record.bankCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.bankName != null">
+                BANK_NAME = #{record.bankName,jdbcType=VARCHAR},
+            </if>
+            <if test="record.account != null">
+                ACCOUNT = #{record.account,jdbcType=VARCHAR},
+            </if>
+            <if test="record.remark != null">
+                REMARK = #{record.remark,jdbcType=VARCHAR},
+            </if>
+            <if test="record.isEnable != null">
+                IS_ENABLE = #{record.isEnable,jdbcType=TINYINT},
+            </if>
+            <if test="record.updateBy != null">
+                UPDATE_BY = #{record.updateBy,jdbcType=VARCHAR},
+            </if>
+            <if test="record.updateTime != null">
+                UPDATE_TIME = #{record.updateTime,jdbcType=VARCHAR},
+            </if>
+            <if test="record.pwd != null">
+                PWD = #{record.pwd,jdbcType=VARCHAR},
+            </if>
+            <if test="record.mesCardid != null">
+                MES_CARDID = #{record.mesCardid,jdbcType=VARCHAR},
+            </if>
+            <if test="record.groupCode != null">
+                GROUP_CODE = #{record.groupCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.qjjobsCode != null">
+                QJJOBS_CODE = #{record.qjjobsCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.teamCode != null">
+                TEAM_CODE = #{record.teamCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.emCode != null">
+                EM_CODE = #{record.emCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.postCode != null">
+                POST_CODE = #{record.postCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.qjoldCode != null">
+                QJOLD_CODE = #{record.qjoldCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.qjmobilePhone != null">
+                QJMOBILE_PHONE = #{record.qjmobilePhone,jdbcType=VARCHAR},
+            </if>
+            <if test="record.employeeCodeMdm != null">
+                EMPLOYEE_CODE_MDM = #{record.employeeCodeMdm,jdbcType=VARCHAR},
+            </if>
+            <if test="record.employeeIcon != null">
+                EMPLOYEE_ICON = #{record.employeeIcon,jdbcType=VARCHAR},
+            </if>
+            <if test="record.cwUnitCode != null">
+                CW_UNIT_CODE = #{record.cwUnitCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.wdCode != null">
+                WD_CODE = #{record.wdCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.dlCode != null">
+                DL_CODE = #{record.dlCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.householdType != null">
+                HOUSEHOLD_TYPE = #{record.householdType,jdbcType=VARCHAR},
+            </if>
+            <if test="record.localType != null">
+                LOCAL_TYPE = #{record.localType,jdbcType=VARCHAR},
+            </if>
+            <if test="record.introducerBy != null">
+                INTRODUCER_BY = #{record.introducerBy,jdbcType=VARCHAR},
+            </if>
+            <if test="record.outsourcingunit != null">
+                OUTSOURCINGUNIT = #{record.outsourcingunit,jdbcType=VARCHAR},
+            </if>
+            <if test="record.employeeStatus != null">
+                EMPLOYEE_STATUS = #{record.employeeStatus,jdbcType=VARCHAR},
+            </if>
+            <if test="record.sscCode != null">
+                SSC_CODE = #{record.sscCode,jdbcType=VARCHAR},
+            </if>
+            <if test="record.bwTime != null">
+                BW_TIME = #{record.bwTime,jdbcType=VARCHAR},
+            </if>
+            <if test="record.faTime != null">
+                FA_TIME = #{record.faTime,jdbcType=VARCHAR},
+            </if>
+            <if test="record.blcTime != null">
+                BLC_TIME = #{record.blcTime,jdbcType=VARCHAR},
+            </if>
+            <if test="record.alcTime != null">
+                ALC_TIME = #{record.alcTime,jdbcType=VARCHAR},
+            </if>
+            <if test="record.fuCode != null">
+                FU_CODE = #{record.fuCode,jdbcType=VARCHAR},
+            </if>
+        </set>
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+    <update id="updateByExample" parameterType="map">
+        <!--
+        @mbggenerated
+        -->
+        update T_EMPLOYEE
+        set IUID = #{record.iuid,jdbcType=VARCHAR},
+            EMPLOYEE_CODE = #{record.employeeCode,jdbcType=VARCHAR},
+            EMPLOYEE_SHORT = #{record.employeeShort,jdbcType=VARCHAR},
+            EMPLOYEE_NAME = #{record.employeeName,jdbcType=VARCHAR},
+            COUNTRY_CODE = #{record.countryCode,jdbcType=VARCHAR},
+            BDATE = #{record.bdate,jdbcType=VARCHAR},
+            INTO_DATE = #{record.intoDate,jdbcType=VARCHAR},
+            NATIVE_CODE = #{record.nativeCode,jdbcType=VARCHAR},
+            SCODE = #{record.scode,jdbcType=VARCHAR},
+            MSCODE = #{record.mscode,jdbcType=VARCHAR},
+            MSDATE = #{record.msdate,jdbcType=VARCHAR},
+            LANGUAGE = #{record.language,jdbcType=VARCHAR},
+            ECODE = #{record.ecode,jdbcType=VARCHAR},
+            DECODE = #{record.decode,jdbcType=VARCHAR},
+            NACODE = #{record.nacode,jdbcType=VARCHAR},
+            PCODE = #{record.pcode,jdbcType=VARCHAR},
+            HCODE = #{record.hcode,jdbcType=VARCHAR},
+            IDTYPE = #{record.idtype,jdbcType=VARCHAR},
+            IDCARD = #{record.idcard,jdbcType=VARCHAR},
+            EMP_STATUS = #{record.empStatus,jdbcType=VARCHAR},
+            LCCODE = #{record.lccode,jdbcType=VARCHAR},
+            ORGANIZATION = #{record.organization,jdbcType=VARCHAR},
+            DEPT_CODE = #{record.deptCode,jdbcType=VARCHAR},
+            STAFF_FLAG = #{record.staffFlag,jdbcType=VARCHAR},
+            USER_ID = #{record.userId,jdbcType=VARCHAR},
+            FNAME = #{record.fname,jdbcType=VARCHAR},
+            BTYPE = #{record.btype,jdbcType=VARCHAR},
+            MACODE = #{record.macode,jdbcType=VARCHAR},
+            SFCODE = #{record.sfcode,jdbcType=VARCHAR},
+            ADCODE = #{record.adcode,jdbcType=VARCHAR},
+            ZYCODE = #{record.zycode,jdbcType=VARCHAR},
+            GRCODE = #{record.grcode,jdbcType=VARCHAR},
+            JOBS_CODE = #{record.jobsCode,jdbcType=VARCHAR},
+            LEAVES_DATE = #{record.leavesDate,jdbcType=VARCHAR},
+            MOBILE_PHONE = #{record.mobilePhone,jdbcType=VARCHAR},
+            WORK_PHONE = #{record.workPhone,jdbcType=VARCHAR},
+            FAMILY_PHONE = #{record.familyPhone,jdbcType=VARCHAR},
+            EMAIL = #{record.email,jdbcType=VARCHAR},
+            ADDRESS = #{record.address,jdbcType=VARCHAR},
+            POSTAL_CODE = #{record.postalCode,jdbcType=VARCHAR},
+            OLD_CODE = #{record.oldCode,jdbcType=VARCHAR},
+            JZ_FLAG = #{record.jzFlag,jdbcType=VARCHAR},
+            RD_DATE = #{record.rdDate,jdbcType=VARCHAR},
+            MA_TYPE = #{record.maType,jdbcType=VARCHAR},
+            ED_TYPE = #{record.edType,jdbcType=VARCHAR},
+            BANK_CODE = #{record.bankCode,jdbcType=VARCHAR},
+            BANK_NAME = #{record.bankName,jdbcType=VARCHAR},
+            ACCOUNT = #{record.account,jdbcType=VARCHAR},
+            REMARK = #{record.remark,jdbcType=VARCHAR},
+            IS_ENABLE = #{record.isEnable,jdbcType=TINYINT},
+            UPDATE_BY = #{record.updateBy,jdbcType=VARCHAR},
+            UPDATE_TIME = #{record.updateTime,jdbcType=VARCHAR},
+            PWD = #{record.pwd,jdbcType=VARCHAR},
+            MES_CARDID = #{record.mesCardid,jdbcType=VARCHAR},
+            GROUP_CODE = #{record.groupCode,jdbcType=VARCHAR},
+            QJJOBS_CODE = #{record.qjjobsCode,jdbcType=VARCHAR},
+            TEAM_CODE = #{record.teamCode,jdbcType=VARCHAR},
+            EM_CODE = #{record.emCode,jdbcType=VARCHAR},
+            POST_CODE = #{record.postCode,jdbcType=VARCHAR},
+            QJOLD_CODE = #{record.qjoldCode,jdbcType=VARCHAR},
+            QJMOBILE_PHONE = #{record.qjmobilePhone,jdbcType=VARCHAR},
+            EMPLOYEE_CODE_MDM = #{record.employeeCodeMdm,jdbcType=VARCHAR},
+            EMPLOYEE_ICON = #{record.employeeIcon,jdbcType=VARCHAR},
+            CW_UNIT_CODE = #{record.cwUnitCode,jdbcType=VARCHAR},
+            WD_CODE = #{record.wdCode,jdbcType=VARCHAR},
+            DL_CODE = #{record.dlCode,jdbcType=VARCHAR},
+            HOUSEHOLD_TYPE = #{record.householdType,jdbcType=VARCHAR},
+            LOCAL_TYPE = #{record.localType,jdbcType=VARCHAR},
+            INTRODUCER_BY = #{record.introducerBy,jdbcType=VARCHAR},
+            OUTSOURCINGUNIT = #{record.outsourcingunit,jdbcType=VARCHAR},
+            EMPLOYEE_STATUS = #{record.employeeStatus,jdbcType=VARCHAR},
+            SSC_CODE = #{record.sscCode,jdbcType=VARCHAR},
+            BW_TIME = #{record.bwTime,jdbcType=VARCHAR},
+            FA_TIME = #{record.faTime,jdbcType=VARCHAR},
+            BLC_TIME = #{record.blcTime,jdbcType=VARCHAR},
+            ALC_TIME = #{record.alcTime,jdbcType=VARCHAR},
+            FU_CODE = #{record.fuCode,jdbcType=VARCHAR}
+        <if test="_parameter != null">
+            <include refid="Update_By_Example_Where_Clause" />
+        </if>
+    </update>
+</mapper>

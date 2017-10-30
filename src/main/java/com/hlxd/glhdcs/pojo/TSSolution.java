@@ -1,5 +1,6 @@
 package com.hlxd.glhdcs.pojo;
 
+import java.io.Serializable;
 import java.util.Date;
 
 /**
@@ -7,7 +8,7 @@ import java.util.Date;
  * TSSolution
  * 数据库表：T_S_SOLUTION
  */
-public class TSSolution {
+public class TSSolution implements Serializable {
 
     /**
      * 替代方案编号(主键)
