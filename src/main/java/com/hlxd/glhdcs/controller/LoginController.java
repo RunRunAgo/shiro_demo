@@ -8,6 +8,8 @@ import org.apache.shiro.SecurityUtils;
 import org.apache.shiro.authc.*;
 import org.apache.shiro.authz.UnauthorizedException;
 import org.apache.shiro.subject.Subject;
+import org.slf4j.Logger;
+import org.slf4j.LoggerFactory;
 import org.springframework.context.annotation.Scope;
 import org.springframework.stereotype.Controller;
 import org.springframework.web.bind.annotation.RequestMapping;
@@ -30,6 +32,7 @@ import java.util.Map;
 @Scope("prototype")
 @RequestMapping("shiro")
 public class LoginController {
+    protected Logger logger = LoggerFactory.getLogger(getClass());
     protected Map<String, Object> resultMap = new LinkedHashMap<String, Object>();
 
 
@@ -45,6 +48,7 @@ public class LoginController {
     @RequestMapping("/userlogin")
     public String  loginCheck(@RequestParam("username") String username, @RequestParam("password") String password,
                                    HttpServletRequest request, RedirectAttributes redirectAttributes) {
+        logger.info("用户登录");
         String msg = "";
 
         Subject subject = SecurityUtils.getSubject();
@@ -93,7 +97,7 @@ public class LoginController {
             resultMap.put("message", "您没有得到相应的授权");
             System.out.println(msg);
         }
-        redirectAttributes.addFlashAttribute("error", "登录失败，请重新登录");
+        redirectAttributes.addFlashAttribute("error",msg);
         return "login";
 
     }
